@@ -1,13 +1,11 @@
-variable "region" {
-  default = "us-east-1"
+provider "aws" {
+    region = "ap-south-1"  
 }
 
-variable "ami_id" {
-  type = "map"
-
-  default = {
-    us-east-1    = "ami-035b3c7efe6d061d5"
-    eu-west-2    = "ami-132b3c7efe6sdfdsfd"
-    eu-central-1 = "ami-9787h5h6nsn"
+resource "aws_instance" "ubuntu" {
+  ami           = "ami-03a933af70fa97ad2 " # us-west-2
+  instance_type = "t2.micro"
+  tags = {
+      Name = "Terraform server 2"
   }
 }
