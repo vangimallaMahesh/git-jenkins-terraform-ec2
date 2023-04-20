@@ -1,12 +1,10 @@
 pipeline {
     agent any
-    tools {
-       terraform 'terraform'
-    }
+    
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', credentialsId: 'Github', url: 'https://github.com/muzakkirsaifi123/terraform_demo'
+                git branch: 'main', url: '
             }
         }
         stage('terraform format check') {
